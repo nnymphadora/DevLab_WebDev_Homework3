@@ -29,7 +29,7 @@ h2 {
   font-size: 50px;
 }
 
-i {
+i.main {
   position: relative;
 
   right: -15rem;
@@ -89,6 +89,28 @@ i:hover {
   height: 250px;
 }
 
+#winning-alert {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  flex-direction: column;
+}
+
+#winning-alert-text {
+  font-size: 4rem;
+}
+
+#winning-alert.show {
+  display: flex;
+}
 /* Reusable */
 
 .rotated {
@@ -107,7 +129,7 @@ i:hover {
     padding: 0;
   }
 
-  i {
+  i.main {
     right: 0;
   }
 }

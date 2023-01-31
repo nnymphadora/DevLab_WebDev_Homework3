@@ -1,6 +1,10 @@
 const cells = document.querySelectorAll(".cell");
-const reloadBtn = document.querySelector("i");
+const reloadBtns = document.querySelectorAll("i");
 const gameStatus = document.querySelector("#game-status");
+const winningAlert = document.querySelector("#winning-alert");
+const winningAlertText = document.querySelector("#winning-alert-text");
+const playerOne = "X";
+const playerTwo = "O";
 const winCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -12,7 +16,7 @@ const winCombos = [
   [2, 4, 6],
 ];
 
-let currentPlayer = "X";
+let currentPlayer = playerOne;
 let gameOn = false;
 let filledCells = ["", "", "", "", "", "", "", "", ""];
 
@@ -23,7 +27,9 @@ function startGame() {
     cell.addEventListener("mouseover", mouseIn);
     cell.addEventListener("mouseout", mouseOut);
   });
-  reloadBtn.addEventListener("click", restartGame);
+  reloadBtns.forEach((button) => {
+    button.addEventListener("click", restartGame);
+  });
   gameOn = true;
   gameStatus.textContent = `It's game on! ${currentPlayer}'s turn!`;
 }
@@ -55,9 +61,10 @@ function checkWinOrTie() {
   }
 
   if (gameWon) {
-    gameStatus.textContent = `${currentPlayer} wins!  Game will restart soon.`;
+    gameStatus.textContent = "Game over.";
+    winningAlertText.textContent = `${currentPlayer} wins!`;
+    winningAlert.classList.add("show");
     gameOn = false;
-    setTimeout(restartTimer(), 2500);
   } else if (!filledCells.includes("")) {
     gameStatus.textContent = "It's a tie!  Game will restart soon";
     gameOn = false;
@@ -74,24 +81,25 @@ function fillCell(cell, index) {
 }
 
 function switchPlayer() {
-  if (currentPlayer == "X") {
-    currentPlayer = "O";
-  } else currentPlayer = "X";
+  if (currentPlayer == playerOne) {
+    currentPlayer = playerTwo;
+  } else currentPlayer = playerOne;
   gameStatus.textContent = `It's ${currentPlayer}'s turn!`;
 }
 
 function restartGame() {
-  currentPlayer = "X";
+  currentPlayer = playerOne;
   filledCells = ["", "", "", "", "", "", "", "", ""];
   gameStatus.textContent = `It's game on! ${currentPlayer}'s turn!`;
   cells.forEach((cell) => (cell.textContent = ""));
+  winningAlert.classList.remove("show");
   gameOn = true;
 }
 
 function restartTimer() {
   let count = 5;
   const countdown = setInterval(function () {
-    gameStatus.textContent = `The game is restarting in ${count} seconds`;
+    gameStatus.textContent = `The game starts in ${count} seconds.`;
     count--;
     if (count === 0) {
       clearInterval(countdown);
