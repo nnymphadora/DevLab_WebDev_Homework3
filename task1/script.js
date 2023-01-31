@@ -1,10 +1,13 @@
 const cells = document.querySelectorAll(".cell");
 const reloadBtns = document.querySelectorAll("i");
 const gameStatus = document.querySelector("#game-status");
+const countdownText = document.querySelector("#countdown-text");
 const winningAlert = document.querySelector("#winning-alert");
 const winningAlertText = document.querySelector("#winning-alert-text");
+
 const playerOne = "X";
 const playerTwo = "O";
+
 const winCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -66,7 +69,7 @@ function checkWinOrTie() {
     winningAlert.classList.add("show");
     gameOn = false;
   } else if (!filledCells.includes("")) {
-    gameStatus.textContent = "It's a tie!  Game will restart soon";
+    gameStatus.textContent = "It's a tie!";
     gameOn = false;
     setTimeout(restartTimer(), 2500);
   } else {
@@ -99,10 +102,11 @@ function restartGame() {
 function restartTimer() {
   let count = 5;
   const countdown = setInterval(function () {
-    gameStatus.textContent = `The game starts in ${count} seconds.`;
+    countdownText.textContent = `The game will restart in ${count} seconds.`;
     count--;
     if (count === 0) {
       clearInterval(countdown);
+      countdownText.textContent = "";
       restartGame();
     }
   }, 1000);
@@ -110,7 +114,6 @@ function restartTimer() {
 
 function mouseIn() {
   const cellId = this.getAttribute("id");
-
   if (filledCells[cellId.at(-1)] == "") {
     this.textContent = `${currentPlayer}`;
     this.classList.add("empty-hovered");
