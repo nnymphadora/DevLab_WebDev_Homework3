@@ -1,0 +1,113 @@
+/* Creating the general layout and style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Indie Flower", cursive;
+  color: white;
+}
+
+#blackboard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: url(assets/chalkboard.png);
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding: 5rem;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+i {
+  position: relative;
+
+  right: -15rem;
+}
+
+i:hover {
+  opacity: 0.7;
+}
+
+.cell {
+  height: 100px;
+  width: 100px;
+  border: 2px solid white;
+  cursor: pointer;
+  line-height: 100px;
+  text-align: center;
+  font-size: 100px;
+}
+
+.empty-hovered:hover {
+  color: rgb(160, 154, 154);
+}
+
+#cell0,
+#cell1,
+#cell2 {
+  border-top: none;
+}
+
+#cell0,
+#cell3,
+#cell6 {
+  border-left: none;
+}
+
+#cell6,
+#cell7,
+#cell8 {
+  border-bottom: none;
+}
+
+#cell2,
+#cell5,
+#cell8 {
+  border-right: none;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 300px;
+  margin: auto;
+  padding: 2rem;
+}
+
+#game-status {
+  height: 250px;
+}
+
+/* Reusable */
+
+.rotated {
+  transform: rotate(-3deg);
+}
+
+/* Media */
+
+@media screen and (max-width: 600px) {
+  #blackboard {
+    padding: 1rem;
+  }
+
+  #game-board {
+    margin: 0;
+    padding: 0;
+  }
+
+  i {
+    right: 0;
+  }
+}
