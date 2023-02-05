@@ -42,6 +42,7 @@
 
 #num-of-chars,
 .char-box {
+  /* the two elements that ask for input from the user */
   height: 100%;
   font-size: 2.5rem;
   background-color: var(--input-background-color);
@@ -57,6 +58,7 @@
 
 #confirm-chars-btn,
 #add-chars-btn {
+  /* these are the two button elements that use google icons */
   height: 100%;
   background-color: var(--input-background-color);
   border: none;
@@ -69,18 +71,23 @@
 
 #confirm-chars-btn span,
 #add-chars-btn span {
+  /* these are the actual google icons inside the button elements */
   background-color: var(--input-background-color);
   color: var(--text-color);
   padding: 0.3rem;
 }
 
 #status-div {
+  /* this is where status messages are displayed */
   height: 1.5rem;
   font-weight: bold;
+  width: 100%;
+  text-align: center;
 }
 
 #box-div,
 #button-div {
+  /* box-div contains all the char-box elements which will be created, and button div conntains the add-chars-button, both are child elements of box-container */
   height: 3rem;
   display: flex;
   justify-content: center;
@@ -88,6 +95,7 @@
 }
 
 #box-div > div {
+  /* inside box-div we create additional div elements which will contain 1 char-box and 1 remove-chars-btn element each. */
   position: relative;
 }
 
