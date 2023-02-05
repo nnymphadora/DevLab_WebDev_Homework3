@@ -1,0 +1,81 @@
+:root {
+  --text-color: #eef1ef;
+  --input-background-color: #1c2321;
+  --input-border-color: #a9b4c2;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+#input-container {
+  display: flex;
+  flex-direction: column;
+}
+#box-container {
+  display: none;
+  gap: 0.7rem;
+}
+
+#input-container,
+#box-container {
+  background-color: #5e6572;
+  color: var(--text-color);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#input-div {
+  height: 3rem;
+  margin: 1.2rem;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--input-border-color);
+}
+
+#num-of-chars,
+.char-box {
+  height: 100%;
+  font-size: 2.5rem;
+  background-color: var(--input-background-color);
+  color: var(--text-color);
+  border: none;
+  text-align: center;
+  border: 1px solid var(--input-border-color);
+}
+
+.char-box {
+  width: 3rem;
+}
+
+#confirm-chars-btn,
+#add-chars-btn {
+  height: 100%;
+  background-color: var(--input-background-color);
+  border: none;
+  border-left: 1px solid var(--input-border-color);
+}
+
+#add-chars-btn {
+  border: 1px solid var(--input-border-color);
+}
+
+#confirm-chars-btn span,
+#add-chars-btn span {
+  background-color: var(--input-background-color);
+  color: var(--text-color);
+  padding: 0.3rem;
+}
+
+#box-div,
+#button-div {
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
