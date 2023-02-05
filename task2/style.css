@@ -14,6 +14,7 @@
 #input-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 #box-container {
   display: none;
@@ -49,11 +50,12 @@
   color: var(--text-color);
   border: none;
   text-align: center;
-  border: 1px solid var(--input-border-color);
 }
 
 .char-box {
   width: 3rem;
+  border: 1px solid var(--input-border-color);
+  height: 3rem;
 }
 
 #confirm-chars-btn,
@@ -67,6 +69,7 @@
 
 #add-chars-btn {
   border: 1px solid var(--input-border-color);
+  height: 3rem;
 }
 
 #confirm-chars-btn span,
@@ -88,10 +91,14 @@
 #box-div,
 #button-div {
   /* box-div contains all the char-box elements which will be created, and button div conntains the add-chars-button, both are child elements of box-container */
-  height: 3rem;
+
   display: flex;
   justify-content: center;
   gap: 0.7rem;
+}
+
+#box-div {
+  flex-wrap: wrap;
 }
 
 #box-div > div {
