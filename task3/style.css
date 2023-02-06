@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(180, 158, 128);
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#slider-container {
+  position: relative;
+  margin: 1rem auto 1rem auto;
+}
+
+img {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 50vh;
+}
+
+.img-container {
+  height: 100%;
+  /* display: flex;
+  overflow: hidden; */
+  padding: 3rem;
+  margin: auto;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: visible;
+}
+
+.next,
+.previous,
+.close {
+  position: absolute;
+  cursor: pointer;
+  color: white;
+}
+
+.next,
+.previous {
+  top: 14rem;
+  font-size: 2rem;
+}
+
+.next:hover,
+.previous:hover,
+.close:hover {
+  opacity: 0.7;
+  transform: scale(1.5);
+}
+
+.next {
+  right: -2rem;
+}
+
+.previous {
+  left: -2rem;
+}
+
+.close {
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+/* For max view */
+
+.max-img {
+  width: fit-content;
+  height: 90vh;
+}
+
+.max-btn {
+  top: 22rem;
+  font-size: 4rem;
+}
+
+.max-btn.previous {
+  left: -5rem;
+}
+
+.max-btn.next {
+  right: -5rem;
+}
+
+.max-close {
+  display: inline;
+  font-size: 2rem;
+}
+
+.max-container {
+  padding: 0;
+}
