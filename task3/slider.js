@@ -8,7 +8,9 @@ const imgs = document.querySelectorAll(".slider-img");
 const numberOfImgs = imgs.length;
 
 let currentImg = 0;
+//we will use this to iterate through images
 let maximiseImg = false;
+//we will use this to check if we need to apply 'max' css classes, for max view. We change the value of this variable and then call the maximiseMinimise function which then adds or removes classes from elements based on the value of the maximiseImg variable.
 
 nextBtn.addEventListener("click", nextImg);
 previousBtn.addEventListener("click", previousImg);
@@ -31,6 +33,7 @@ imgs.forEach((img) => {
 });
 
 function enableKeys(event) {
+  //event listener for keydown event on which is added and removed from img elements on mouseover and mouseleave events
   if (event.key === "ArrowRight") {
     nextImg();
   } else if (event.key === "ArrowLeft") {
@@ -39,6 +42,7 @@ function enableKeys(event) {
 }
 
 function changeImg() {
+  //this function hides all the images and then only shows the one that is located on the currentImg index of the imgs nodelist.
   for (let img of imgs) {
     img.classList.remove("show");
     img.classList.add("hide");
@@ -48,6 +52,7 @@ function changeImg() {
 }
 
 function nextImg() {
+  //this function updates the currentImg variable
   if (currentImg === numberOfImgs - 1) {
     currentImg = 0;
   } else {
@@ -57,6 +62,7 @@ function nextImg() {
 }
 
 function previousImg() {
+  //this function updates the currentImg variable
   if (currentImg === 0) {
     currentImg = numberOfImgs - 1;
   } else currentImg--;
@@ -64,6 +70,7 @@ function previousImg() {
 }
 
 function maximiseMinimise() {
+  //this function checks the value of the maximiseImg variable and based on that adds or removes css classes in order to either create max view or min view of the slider
   if (maximiseImg) {
     imgs.forEach((img) => {
       img.classList.add("max-img");
@@ -73,7 +80,7 @@ function maximiseMinimise() {
     nextBtn.classList.add("max-btn");
     imgContainer.classList.add("max-container");
   } else {
-    imgs.forEach((img) => {
+    simgs.forEach((img) => {
       img.classList.remove("max-img");
     });
     closeBtn.classList.remove("max-close");

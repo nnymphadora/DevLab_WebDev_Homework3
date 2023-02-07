@@ -6,7 +6,7 @@ const boxContainer = document.querySelector("#box-container");
 const boxDiv = document.querySelector("#box-div");
 const statusDiv = document.querySelector("#status-div");
 
-document.addEventListener("keydown", previousInput)
+document.addEventListener("keydown", previousInput);
 //we add this to the entire document so the user doesnt have to click on each individual box to delete input
 
 confirmChartBtn.addEventListener("click", charactersConfirmed);
@@ -110,15 +110,16 @@ function nextInput(currentInput) {
   }
 }
 
-
 function previousInput(event) {
+  //we use this function to enable the user to clear multiple input value one after another, so they dont have to point and click every time.
   let inputs = document.querySelectorAll(".char-box");
 
   let currentIndex = [...inputs].indexOf(event.target);
 
-  if(event.key === "Backspace") {
-    event.target.value = ""
-    if (currentIndex > 0 ) {
-    inputs[currentIndex-1].focus()} 
-  }};
-
+  if (event.key === "Backspace") {
+    event.target.value = "";
+    if (currentIndex > 0) {
+      inputs[currentIndex - 1].focus();
+    }
+  }
+}

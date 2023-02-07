@@ -1,7 +1,7 @@
 const cells = document.querySelectorAll(".cell");
-// we have a total of 9 cell
+// we have a total of 9 cells
 const reloadBtns = document.querySelectorAll("i");
-//icon for instan reload
+//icon for instant reload
 const gameStatus = document.querySelector("#game-status");
 //useful game status messages
 const countdownText = document.querySelector("#countdown-text");
