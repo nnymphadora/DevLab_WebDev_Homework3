@@ -111,7 +111,6 @@ function nextInput(currentInput) {
 }
 
 
-
 function previousInput(event) {
   let inputs = document.querySelectorAll(".char-box");
 
@@ -119,8 +118,7 @@ function previousInput(event) {
 
   if(event.key === "Backspace") {
     event.target.value = ""
-    inputs[currentIndex-1].focus()
-  }
+    if (currentIndex > 0 ) {
+    inputs[currentIndex-1].focus()} 
+  }};
 
-
-}
