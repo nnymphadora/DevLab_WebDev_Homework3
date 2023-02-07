@@ -6,6 +6,9 @@ const boxContainer = document.querySelector("#box-container");
 const boxDiv = document.querySelector("#box-div");
 const statusDiv = document.querySelector("#status-div");
 
+document.addEventListener("keydown", previousInput)
+//we add this to the entire document so the user doesnt have to click on each individual box to delete input
+
 confirmChartBtn.addEventListener("click", charactersConfirmed);
 //the button used to confirm the input for desired number 'of charBox' elements
 
@@ -105,4 +108,18 @@ function nextInput(currentInput) {
   if (currentInput.value !== "" && inputs[currentIndex + 1]) {
     inputs[currentIndex + 1].focus();
   }
+}
+
+
+
+function previousInput(event) {
+  let inputs = document.querySelectorAll(".char-box");
+
+  let currentIndex = [...inputs].indexOf(event.target);
+
+  if(event.key === "Backspace") {
+    inputs[currentIndex-1].focus()
+  }
+
+
 }
