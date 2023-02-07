@@ -118,6 +118,7 @@ function previousInput(event) {
   let currentIndex = [...inputs].indexOf(event.target);
 
   if(event.key === "Backspace") {
+    event.target.value = ""
     inputs[currentIndex-1].focus()
   }
 
