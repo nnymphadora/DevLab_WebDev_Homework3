@@ -9,11 +9,13 @@ body {
   display: flex;
   overflow: hidden;
   height: 100vh;
+   align-items: center;
+  justify-content: center;
 }
 
 #slider-container {
   position: relative;
-  margin: 1rem auto 1rem auto;
+ 
 }
 
 img {
@@ -24,8 +26,6 @@ img {
 
 .img-container {
   height: 100%;
-  /* display: flex;
-  overflow: hidden; */
   padding: 3rem;
   margin: auto;
 }
