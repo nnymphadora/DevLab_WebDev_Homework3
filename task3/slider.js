@@ -80,7 +80,7 @@ function maximiseMinimise() {
     nextBtn.classList.add("max-btn");
     imgContainer.classList.add("max-container");
   } else {
-    simgs.forEach((img) => {
+    imgs.forEach((img) => {
       img.classList.remove("max-img");
     });
     closeBtn.classList.remove("max-close");
